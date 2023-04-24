@@ -18,7 +18,7 @@
     <center>
     <div class="container">
         <div class="admin-user">
-            <!-- ADMIN LOGIN -->
+            <!-- ADMIN LOGIN --> 
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="admin-form">
                 <h2 class="title">Admin Login</h2>
                 <div class="input-field">
