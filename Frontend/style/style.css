@@ -1,0 +1,34 @@
+/**Note: Registration and User Log-In needs to responsive**/
+/**Fonts Used: **/
+
+
+/**Registration**/
+.reg-body {
+    margin: 0%;
+    padding: 0%;
+    background-color: antiquewhite;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg-container {
+    background-color: aquamarine;
+}
+
+.title {
+    font-size: 32px;
+    color: black;
+
+    text-align: center;
+}
+
+/**Log In Page: User**/
+
+/**Log In Page: Admin**/
+
+/**Admin Dashboard**/
+
+/**User Dashboard**/
