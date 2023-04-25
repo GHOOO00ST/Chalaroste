@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="Style/style.css">
     <!--Box Icons-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='stylesheet' rel='Frontend/style/admindb.css'>
 </head>
 <body>
     <center>

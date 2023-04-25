@@ -6,7 +6,9 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>STUDENT PAGE</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link href='stylesheet' rel='Frontend/style/registration.css'>
+        <title>Registration</title>
     </head>
 </html>
 <body>
@@ -62,81 +64,86 @@
         $errordateOfCheckIn = "the date of check in is ahead than the date of check out";   
     }
     ?>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-        <!--FIRSTNAME-->
-        <label for="FNAME"class="LFNAME">FIRST NAME:</label>
-        <input type="text"name="FNAME"id="FNAME"class="IFNAME" placeholder="FIRST NAME"><br>
-        <span style="color: red; font-weight: 500"><?= $errorFname?></span>
-        <!--MIDDLENAME-->
-        <br>
-        <label for="MNAME"class="LMNAME">MIDDLE NAME:</label>
-        <input type="text"name="MNAME"id="MNAME"class="IMNAME" placeholder="MIDDLE NAME"><br>
-        <span style="color: red; font-weight: 500"><?= $errorMname?></span>
-        <!--LASTNAME-->
-        <br>
-        <label for="LNAME"class="LLNAME">LAST NAME:</label>
-        <input type="text"name="LNAME"id="LNAME"class="ILNAME" placeholder="LAST NAME"><br>
-        <span style="color: red; font-weight: 500"><?= $errorLname?></span>
-        <!--HOUSE NUMBER-->
-        <br>
-        <label for="hnumber">House Number</label>
-        <input id="hnumber" name="HNUMBER" type="text" placeholder="House No."><br>
-        <!--Street/Subdivision-->
-        <br>
-        <label for="subd">Street/Subdivision</label>
-        <input id="subd" name="SUBDI" type="text" placeholder="Street/Subdivision"><br>
-        <!--Barangay-->
-        <br>
-        <label for="brgy">Barangay</label>
-        <input id="brgy" name="BRGY" type="text" placeholder="Barangay"><br>
-        <!--City/Municipality-->
-        <br>
-        <label for="city">City/Municipality</label>
-        <input type="text"name="CM"id="cm" placeholder="City/Municipality"><br>
-        <!--EMAIL-->
-        <br>
-        <label for="email"class="LEMAIL">EMAIL:</label>
-        <input type="text"name="EMAIL"id="EMAIL"class="IEMAIL" placeholder="EMAIL"><br>
-        <span style="color: red; font-weight: 500"><?= $errorEmail?></span>
-        <!--CONTACT NUMBER-->
-        <br>
-        <label for="CONTACT"class="LCONTACT">CONTACT:</label>
-        <input type="tel"name="CONTACT"id="CONTACT"class="ICONTACT" placeholder="CONTACT"><br>
-        <span style="color: red; font-weight: 500"><?= $errorContact?></span>
-        <!--GENDER-->
-        <br>
-        <label class = "LGEN">GENDER:</label>
-        <input id="MALE" name="GENDER" value="MALE" type="radio" class="IGEN"><label for="MALE" class="G">MALE</label>
-        <input id="FEMALE" name="GENDER" value="FEMALE" type="radio" class="IGEN"> <label for="FEMALE" class="G">FEMALE</label>
-        <br>
-        <!--BIRTHDAY-->
-        <br>
-        <label for="BDAY"class="LBDAY">BIRTHDAY:</label>
-        <input id="BDAY" name="BDAY" type="date" min="1900-01-01" max="2023-12-31" class="IBDAY"><br>
-        <!--NATIONALITY-->
-        <br>
-        <label for="NATIONALITY" class="LNATIONALITY">NATIONALITY:</label>
-        <input type="text"name="NATIONALITY"id="NATIONALITY"class="INATIONALITY"><br>
-        <!--DATE OF CHECK IN-- DOCI==DATE OF CHECK IN-->
-        <br>
-        <label for="DOCI" class="LDOCI">DATE OF CHECK IN:</label>
-        <input type="date" name="DOCI"id="DOCI"min="2023-01-01" max="2023-12-31" class= "IDOCI"><br>
-        <span style="color: red; font-weight: 500"><?= $errordateOfCheckIn?></span>
-        <!--DATE OF CHECK OUT-- DOCU = DATE OF CHECK OUT-->
-        <br>
-        <label for="DOCU" class="LDOCU">DATE OF CHECK OUT:</label>
-        <input type="date" name="DOCU"id="DOCU"min="2023-01-01" max="2023-12-31" class= "IDOCU"><br>
-        
-        <br>
-        <!--NUMBER OF GUEST-->
-        <label for="NumberOfAdult" class = "LNumberOfAdult">Number of Guest Adult:</label>
-        <input type = "number" name="NumberOfAdult" id="NumberOfAdult" class=INumberOfAdult><br>
+    <div class="reg-container">
+        <h1 class="title">Registration</h1>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+            <div class="name-field">
+                <!--FIRSTNAME-->
+                <label for="FNAME"class="LFNAME">FIRST NAME</label>
+                <input type="text"name="FNAME"id="FNAME"class="IFNAME" placeholder="FIRST NAME"><br>
+                <span style="color: red; font-weight: 500"><?= $errorFname?></span>
+                <!--MIDDLENAME-->
+                <br>
+                <label for="MNAME"class="LMNAME">MIDDLE NAME</label>
+                <input type="text"name="MNAME"id="MNAME"class="IMNAME" placeholder="MIDDLE NAME"><br>
+                <span style="color: red; font-weight: 500"><?= $errorMname?></span>
+                <!--LASTNAME-->
+                <br>
+                <label for="LNAME"class="LLNAME">LAST NAME</label>
+                <input type="text"name="LNAME"id="LNAME"class="ILNAME" placeholder="LAST NAME"><br>
+                <span style="color: red; font-weight: 500"><?= $errorLname?></span>
+            </div>
+            <!--HOUSE NUMBER-->
+            <br>
+            <label for="hnumber" class="input-hnum">House Number</label>
+            <input id="hnumber" class="input-hnumb" name="HNUMBER" type="text" placeholder="House No."><br>
+            <!--Street/Subdivision-->
+            <br>
+            <label for="subd" class="input-subd">Street/Subdivision</label>
+            <input id="subd" class="input-subdi" name="SUBDI" type="text" placeholder="Street/Subdivision"><br>
+            <!--Barangay-->
+            <br>
+            <label for="brgy" class="input-brgy">Barangay</label>
+            <input id="brgy" class="input-brgyfield" name="BRGY" type="text" placeholder="Barangay"><br>
+            <!--City/Municipality-->
+            <br>
+            <label for="city" class="input-cm">City/Municipality</label>
+            <input type="text" class="input-cityormuni" name="CM"id="cm" placeholder="City/Municipality"><br>
+            <!--EMAIL-->
+            <br>
+            <label for="email"class="LEMAIL">Email</label>
+            <input type="text"name="EMAIL"id="EMAIL"class="IEMAIL" placeholder="EMAIL"><br>
+            <span style="color: red; font-weight: 500"><?= $errorEmail?></span>
+            <!--CONTACT NUMBER-->
+            <br>
+            <label for="CONTACT"class="LCONTACT">Cellphone Number</label>
+            <input type="tel"name="CONTACT"id="CONTACT"class="ICONTACT" placeholder="CONTACT"><br>
+            <span style="color: red; font-weight: 500"><?= $errorContact?></span>
+            <!--GENDER-->
+            <br>
+            <label class = "LGEN">Gender</label>
+            <input id="MALE" name="GENDER" value="MALE" type="radio" class="IGEN"><label for="MALE" class="G">MALE</label>
+            <input id="FEMALE" name="GENDER" value="FEMALE" type="radio" class="IGEN"> <label for="FEMALE" class="G">FEMALE</label>
+            <br>
+            <!--BIRTHDAY-->
+            <br>
+            <label for="BDAY"class="LBDAY">Birthdate</label>
+            <input id="BDAY" name="BDAY" type="date" min="1900-01-01" max="2023-12-31" class="IBDAY"><br>
+            <!--NATIONALITY-->
+            <br>
+            <label for="NATIONALITY" class="LNATIONALITY">Nationality</label>
+            <input type="text"name="NATIONALITY"id="NATIONALITY"class="INATIONALITY"><br>
+            <!--DATE OF CHECK IN-- DOCI==DATE OF CHECK IN-->
+            <br>
+            <label for="DOCI" class="LDOCI">Date of Check In</label>
+            <input type="date" name="DOCI"id="DOCI"min="2023-01-01" max="2023-12-31" class= "IDOCI"><br>
+            <span style="color: red; font-weight: 500"><?= $errordateOfCheckIn?></span>
+            <!--DATE OF CHECK OUT-- DOCU = DATE OF CHECK OUT-->
+            <br>
+            <label for="DOCU" class="LDOCU">Date of Check Out</label>
+            <input type="date" name="DOCU"id="DOCU"min="2023-01-01" max="2023-12-31" class= "IDOCU"><br>
+            
+            <br>
+            <!--NUMBER OF GUEST-->
+            <label for="NumberOfAdult" class = "LNumberOfAdult">Number of Adults:</label>
+            <input type = "number" name="NumberOfAdult" id="NumberOfAdult" class=INumberOfAdult><br>
 
-        <label for="NumberOfKids" class = "LNumberOfKids">Number of Guest Kids:</label>
-        <input type = "number" name="NumberOfKids" id="NumberOfKids" class=INumberOfKids><br>
+            <label for="NumberOfKids" class = "LNumberOfKids">Number of Kids:</label>
+            <input type = "number" name="NumberOfKids" id="NumberOfKids" class=INumberOfKids><br>
 
-        <input type="submit"name="submit"value="submit"class="btnSubmit"><br>
-    </form>
+            <input type="submit"name="submit"value="submit"class="btn-Submit"><br>
+        </form>
+    </div>
 
     <?php 
          if(isset($_POST['submit'])){
