@@ -61,7 +61,7 @@
     }
     //checks if the date of check out is ahead before the check in
     if ($dateOfCheckIn=$_POST['DOCI'] > $dateOfCheckOut=$_POST['DOCU']){
-        $errordateOfCheckIn = "the date of check in is ahead than the date of check out";   
+        $errordateOfCheckIn = "The date of check in should be ahead than the date of check out";   
     }
     ?>
     <div class="reg-container">
@@ -183,7 +183,7 @@
                 if($RSLTS){
                     header("location: loginpage.php");
                     exit();
-                    echo 'registration Successful';
+                    echo 'Registration Successful';
                 }else{
                     echo 'Error';
                 }
