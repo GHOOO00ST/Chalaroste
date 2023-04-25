@@ -17,30 +17,32 @@
 </head>
 <body>
     <center>
-    <div class="container">
-        <div class="admin-user">
-            <!-- ADMIN LOGIN --> 
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="admin-form">
-                <h2 class="title">Admin Login</h2>
-                <div class="input-field">
-                    <i class='bx bxs-user'></i>
-                    <input type="text" name="adminid" id="adminid" placeholder="ADMINID">
-                </div>
-                <div class="input-field">
-                    <i class='bx bxs-lock-alt'></i>
-                    <input type="password" name="adminpassword" id="adminpassword" placeholder="Password">
-                </div>
-                <input type="submit" value="LOG IN" name="adminsubmit" class="btn1">
-            </form>
-                <button class="btn2" onclick="gotoFunction()" type="button">Log in as User</button>
-                <script>
-                    function gotoFunction(){
-                        window.location.href = "loginpage.php";
-                    }
-                </script>
-            </form>
-        </div>
-        </center>
+        <div class="container">
+            <div class="admin-user">
+                <!-- ADMIN LOGIN --> 
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="admin-form">
+                    <h2 class="title">Admin Login</h2>
+                    <div class="input-field">
+                        <i class='bx bxs-user'></i>
+                        <input type="text" name="adminid" id="adminid" placeholder="ADMINID">
+                    </div>
+                    <div class="input-field">
+                        <i class='bx bxs-lock-alt'></i>
+                        <input type="password" name="adminpassword" id="adminpassword" placeholder="Password">
+                    </div>
+                    <input type="submit" value="LOG IN" name="adminsubmit" class="btn1">
+                </form>
+                <form>
+                    <button class="btn2" onclick="gotoFunction()" type="button">Log in as User</button>
+                    <script>
+                        function gotoFunction(){
+                            window.location.href = "loginpage.php";
+                        }
+                    </script>
+                </form>
+            </div>
+        </div> 
+    </center>
 </body>
 </html>
 <?php
