@@ -11,7 +11,7 @@
         <title>Registration</title>
     </head>
 </html>
-<body>
+<body class="reg-body">
     <?php
     error_reporting(0);
     //errorvariables for names
