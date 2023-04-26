@@ -1,0 +1,39 @@
+/**FONTS**/
+/**Montserrat**/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+/**Source Code Pro**/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+/**COLORS**/
+:root {
+    --color1: #04724D;
+    --color2: #FF9F1C;
+    --color3: #EBEAE1;
+    --subText: #6E8387;
+    --subText2: #A4303F;
+    --mainText: #222222; /**also background color for darkmode**/
+    --mainText2: #FFFCE8; /**also background color for lightmode**/
+}
+
+body {
+    margin: 0%;
+    padding: 0%;
+    background-color: var(--mainText2);
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.reg-container {
+    background-color: var(--color3);
+}
+
+.title {
+    font-size: 32px;
+    color: var(--mainText);
+
+    text-align: center;
+}
