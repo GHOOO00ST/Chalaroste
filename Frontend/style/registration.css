@@ -15,10 +15,10 @@
     --mainText2: #FFFCE8; /**also background color for lightmode**/
 }
 
-.reg-body {
+body {
     margin: 0%;
     padding: 0%;
-    background-color: antiquewhite;
+    background-color: var(--mainText2);
     min-height: 100vh;
 
     display: flex;
@@ -27,12 +27,12 @@
 }
 
 .reg-container {
-    background-color: aquamarine;
+    background-color: var(--color1);
 }
 
 .title {
     font-size: 32px;
-    color: black;
+    color: var(--mainText);
 
     text-align: center;
 }

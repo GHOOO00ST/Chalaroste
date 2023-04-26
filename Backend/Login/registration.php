@@ -6,12 +6,11 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link href='stylesheet' rel='Frontend/style/registration.css'>
+        <link href='Frontend/style/registration.css' rel='stylesheet'>
         <title>Registration</title>
     </head>
 </html>
-<body class="reg-body">
+<body>
     <?php
     error_reporting(0);
     //errorvariables for names
