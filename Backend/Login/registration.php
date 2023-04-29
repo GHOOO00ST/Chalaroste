@@ -28,21 +28,21 @@
      //checks if first name is empty and contains text only
      if(empty($_POST['FNAME'])){
         $errorFname="First name is required.";
-    } else if(!preg_match("/^[a-z A-Z]*$/", $_POST['FNAME'])){
+    } else if(!preg_match("/^[a-z A-Z ]*$/", $_POST['FNAME'])){
         $errorFname="Only alphabets and whitespaces are allowed in first name.";
     }
 
     //checks if the middle name is empty and contains text only
     if(empty($_POST['MNAME'])){
         $errorMname="Middle name is required.";
-    } else if(!preg_match("/^[a-z A-Z]*$/", $_POST['MNAME'])){
+    } else if(!preg_match("/^[a-z A-Z ]*$/", $_POST['MNAME'])){
         $errorMname="Only alphabets and whitespaces are allowed in middle name.";
     }
 
     //checks if last name is empty and contains text only
     if(empty($_POST['LNAME'])){
         $errorLname="Last name is required.";
-    } else if(!preg_match("/^[a-z A-Z]*$/", $_POST['LNAME'])){
+    } else if(!preg_match("/^[a-z A-Z ]*$/", $_POST['LNAME'])){
         $errorLname="Only alphabets and whitespaces are allowed in last name.";
     }
 
@@ -82,22 +82,24 @@
                 <input type="text"name="LNAME"id="LNAME"class="ILNAME" placeholder="LAST NAME"><br>
                 <span style="color: red; font-weight: 500"><?= $errorLname?></span>
             </div>
-            <!--HOUSE NUMBER-->
-            <br>
-            <label for="hnumber" class="input-hnum">House Number</label>
-            <input id="hnumber" class="input-hnumb" name="HNUMBER" type="text" placeholder="House No."><br>
-            <!--Street/Subdivision-->
-            <br>
-            <label for="subd" class="input-subd">Street/Subdivision</label>
-            <input id="subd" class="input-subdi" name="SUBDI" type="text" placeholder="Street/Subdivision"><br>
-            <!--Barangay-->
-            <br>
-            <label for="brgy" class="input-brgy">Barangay</label>
-            <input id="brgy" class="input-brgyfield" name="BRGY" type="text" placeholder="Barangay"><br>
-            <!--City/Municipality-->
-            <br>
-            <label for="city" class="input-cm">City/Municipality</label>
-            <input type="text" class="input-cityormuni" name="CM"id="cm" placeholder="City/Municipality"><br>
+            <div class="add-field">
+                <!--HOUSE NUMBER-->
+                <br>
+                <label for="hnumber" class="input-hnum">House Number</label>
+                <input id="hnumber" class="input-hnumb" name="HNUMBER" type="text" placeholder="House No."><br>
+                <!--Street/Subdivision-->
+                <br>
+                <label for="subd" class="input-subd">Street/Subdivision</label>
+                <input id="subd" class="input-subdi" name="SUBDI" type="text" placeholder="Street/Subdivision"><br>
+                <!--Barangay-->
+                <br>
+                <label for="brgy" class="input-brgy">Barangay</label>
+                <input id="brgy" class="input-brgyfield" name="BRGY" type="text" placeholder="Barangay"><br>
+                <!--City/Municipality-->
+                <br>
+                <label for="city" class="input-cm">City/Municipality</label>
+                <input type="text" class="input-cityormuni" name="CM"id="cm" placeholder="City/Municipality"><br>
+            </div>
             <!--EMAIL-->
             <br>
             <label for="email"class="LEMAIL">Email</label>
@@ -140,7 +142,7 @@
             <label for="NumberOfKids" class = "LNumberOfKids">Number of Kids:</label>
             <input type = "number" name="NumberOfKids" id="NumberOfKids" class=INumberOfKids><br>
 
-            <input type="submit"name="submit"value="submit"class="btn-Submit"><br>
+            <input type="Submit"name="Submit"value="Submit"class="btn-Submit"><br>
         </form>
     </div>
 

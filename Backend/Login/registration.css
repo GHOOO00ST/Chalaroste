@@ -20,20 +20,52 @@ body {
     padding: 0%;
     background-color: var(--mainText2);
     min-height: 100vh;
+    box-sizing: border-box;
 
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
+    line-height: 125%;
+
 }
 
 .reg-container {
     background-color: var(--color3);
+    border-radius: 10px;
+
+    padding: 3%;
 }
 
 .title {
     font-size: 32px;
     color: var(--mainText);
-
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+
+    padding-bottom: 5%;
+}
+
+.reg-container input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+
+    padding-left: 3%;
+}
+
+.reg-container label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.reg-container span {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.name-field input{
+    width: 60%;
 }
