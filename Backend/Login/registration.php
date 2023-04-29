@@ -180,9 +180,9 @@
                 VALUES('$FNM','$MNM','$LNM','$HN','$SBS','$BRGY','$CMY','$EML','$CNM','$GND','$BDY','$NTN','$dateOfCin','$dateOfCout','$NumberOfAdult','$NumberOfKids')";
                 $RSLTS = sqlsrv_query($conn,$SQL);
                 if($RSLTS){
-                    header("location: loginpage.php");
+                    header("location: http://localhost/Chalaroste/Frontend/Login%20Page/regsuccess.html");//to be replace with an actual link
                     exit();
-                    echo 'Registration Successful';
+                    echo 'Registration LoginSuccessful';
                 }else{
                     echo 'Error';
                 }

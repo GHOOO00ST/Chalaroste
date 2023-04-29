@@ -18,7 +18,6 @@
     <center>
     <div class="container">
         <div class="admin-user">
-            <!-- ADMIN LOGIN -->
             <!--USER LOGIN-->
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="user-form">
                 <h2 class="title">User Login</h2>
@@ -69,7 +68,7 @@
             $row = sqlsrv_fetch_array($results);
             
             if($row['USERNAME']==$USER && $row['PASSWORD']==$PASSWORD){
-                header("location:guestlogin.html");
+                header("location:http://localhost/Chalaroste/Frontend/Login%20Page/guestlogin.html");//to be replace with an actual account
                exit();
             }else{
                 echo "<p style='position:absolute; bottom: 20px; font-size: 16px; font-weight: 500; color: red;'>Incorrect USER or password. Please try again.</p>";
@@ -77,4 +76,4 @@
         }
     } 
 ?>
-<!-- ADMIN LOGIN -->
+

@@ -70,7 +70,7 @@
             $row = sqlsrv_fetch_array($results);
                     
             if($row['USERNAME']==$idadmin && $row['PASSWORD']==$passwordid){
-                header("Location:adminlogin.html");
+                header("Location: http://localhost/Chalaroste/Frontend/Login%20Page/adminlogin.html"); //to be replace with an actual link
                 exit();
             }else{
                 echo "<p style='position:absolute; bottom: 20px; font-size: 16px; font-weight: 500; color: white;'>Incorrect ADMIN USER or password. Please try again.</p>";

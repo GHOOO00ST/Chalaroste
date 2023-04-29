@@ -8,6 +8,43 @@
     <title>CHLRSTE: User Dashboard</title>
 </head>
 <body>
-    
+    <p>Lights</p>
+    <div class="btn-light-container">
+        <div class="btn-divslider">
+            <input type="range" min="0" max="100" value="50" class="btn-slider" id="mySlider">
+        </div>
+        <div class="btn-onOff">
+            <input type="button" id="On-light" value="On" class="">
+            <input type="button" id="Off-light" value="Off" class="">
+        </div>
+        <div class="btn-Lightspresetbutton">
+             <input type="button" value="Dim" id="preDim" class="">
+             <input type="button" value="Reading" id="preRead" class="">
+             <input type="button" value="Bright" id="preBright" class="">
+        </div>
+    </div>
+    <p>Tv</p>
+    <div class="btn-tv-container">
+            <input type="button" id="On-tv" value="On" class="">
+            <input type="button" id="Off-tv" value="Off" class="">
+    </div>
+    <p>Blinds</p>
+    <div class="btn-Blinds-container">
+        <div class="Blinds-presetButton">
+            <input type="button" value="Low" id="preLow" class="">
+            <input type="button" value="Medium" id="preMedium" class="">
+            <input type="button" value="High" id="preHigh" class="">
+        </div>
+        <div class="btn-UpAndDown">
+            <input type="button" value="On" id="On-Blinds" class="">
+            <input type="button" value="Off" id="Off-Blinds" class="">
+        </div>
+    </div>
+    <button onclick="reportFunction()" class="btns">Logout</button>
+    <script>
+        function reportFunction(){
+            window.location.href = "http://localhost/Chalaroste/Backend/Login/loginpage.php"; //to be replace with an actual link
+        }
+    </script>
 </body>
 </html>
