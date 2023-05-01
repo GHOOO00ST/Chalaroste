@@ -23,26 +23,27 @@
     $errorEmail="";
     //variables for dates of check in and check out
     $errordateOfCheckIn = "";
+    $errordateOfCurrentDate = "";
 
     
      //checks if first name is empty and contains text only
      if(empty($_POST['FNAME'])){
         $errorFname="First name is required.";
-    } else if(!preg_match("/^[a-z A-Z]*$/", $_POST['FNAME'])){
+    } else if(!preg_match("/^[a-z A-Z ]*$/", $_POST['FNAME'])){
         $errorFname="Only alphabets and whitespaces are allowed in first name.";
     }
 
     //checks if the middle name is empty and contains text only
     if(empty($_POST['MNAME'])){
         $errorMname="Middle name is required.";
-    } else if(!preg_match("/^[a-z A-Z]*$/", $_POST['MNAME'])){
+    } else if(!preg_match("/^[a-z A-Z ]*$/", $_POST['MNAME'])){
         $errorMname="Only alphabets and whitespaces are allowed in middle name.";
     }
 
     //checks if last name is empty and contains text only
     if(empty($_POST['LNAME'])){
         $errorLname="Last name is required.";
-    } else if(!preg_match("/^[a-z A-Z]*$/", $_POST['LNAME'])){
+    } else if(!preg_match("/^[a-z A-Z ]*$/", $_POST['LNAME'])){
         $errorLname="Only alphabets and whitespaces are allowed in last name.";
     }
 
@@ -59,9 +60,23 @@
         $errorEmail="Email is required.";
     }
     //checks if the date of check out is ahead before the check in
+    $currentDate = Date('Y-m-d 00:00:00.000');
+    $checkInDate = $_POST['DOCI'];
+    $checkOutDate = $_POST['DOCU'];
     if ($dateOfCheckIn=$_POST['DOCI'] > $dateOfCheckOut=$_POST['DOCU']){
         $errordateOfCheckIn = "The date of check in should be ahead than the date of check out";   
     }
+    else if($checkInDate < $currentDate || $checkOutDate <  $currentDate ){
+        $errordateOfCurrentDate = "The date of is behind of the current date";
+    }
+    //ADULT NUMBER VALIDATION
+    $errorNumberofGuest = "";
+    if(empty($_POST['NumberOfAdult']) || empty($_POST['NumberOfKids'])){
+        $errorNumberofGuest = "Number of People are needed";
+    }else if ((!preg_match("/^[0-9]*$/",$_POST['NumberOfAdult'])) || (!preg_match("/^[0-9]*$/",$_POST['NumberOfKids']))){
+        $errorNumberofGuest = "Positive Numbers Only";
+    }
+
     ?>
     <div class="reg-container">
         <h1 class="title">Registration</h1>
@@ -69,17 +84,17 @@
             <div class="name-field">
                 <!--FIRSTNAME-->
                 <label for="FNAME"class="LFNAME">FIRST NAME</label>
-                <input type="text"name="FNAME"id="FNAME"class="IFNAME" placeholder="FIRST NAME"><br>
-                <span style="color: red; font-weight: 500"><?= $errorFname?></span>
+                <input type="text"name="FNAME"id="FNAME"class="IFNAME" placeholder="FIRST NAME" required><br>
+                <span style="color: red; font-weight: 500"><?= $errorFname?><br> </span>
                 <!--MIDDLENAME-->
                 <br>
                 <label for="MNAME"class="LMNAME">MIDDLE NAME</label>
-                <input type="text"name="MNAME"id="MNAME"class="IMNAME" placeholder="MIDDLE NAME"><br>
+                <input type="text"name="MNAME"id="MNAME"class="IMNAME" placeholder="MIDDLE NAME" required><br>
                 <span style="color: red; font-weight: 500"><?= $errorMname?></span>
                 <!--LASTNAME-->
                 <br>
                 <label for="LNAME"class="LLNAME">LAST NAME</label>
-                <input type="text"name="LNAME"id="LNAME"class="ILNAME" placeholder="LAST NAME"><br>
+                <input type="text"name="LNAME"id="LNAME"class="ILNAME" placeholder="LAST NAME" required><br>
                 <span style="color: red; font-weight: 500"><?= $errorLname?></span>
             </div>
             <!--HOUSE NUMBER-->
@@ -101,12 +116,12 @@
             <!--EMAIL-->
             <br>
             <label for="email"class="LEMAIL">Email</label>
-            <input type="text"name="EMAIL"id="EMAIL"class="IEMAIL" placeholder="EMAIL"><br>
+            <input type="text"name="EMAIL"id="EMAIL"class="IEMAIL" placeholder="EMAIL" required><br>
             <span style="color: red; font-weight: 500"><?= $errorEmail?></span>
             <!--CONTACT NUMBER-->
             <br>
             <label for="CONTACT"class="LCONTACT">Cellphone Number</label>
-            <input type="tel"name="CONTACT"id="CONTACT"class="ICONTACT" placeholder="CONTACT"><br>
+            <input type="tel"name="CONTACT"id="CONTACT"class="ICONTACT" placeholder="CONTACT" required><br>
             <span style="color: red; font-weight: 500"><?= $errorContact?></span>
             <!--GENDER-->
             <br>
@@ -117,7 +132,7 @@
             <!--BIRTHDAY-->
             <br>
             <label for="BDAY"class="LBDAY">Birthdate</label>
-            <input id="BDAY" name="BDAY" type="date" min="1900-01-01" max="2023-12-31" class="IBDAY"><br>
+            <input id="BDAY" name="BDAY" type="date" min="1958-01-01" max="2005-12-31" class="IBDAY"><br>
             <!--NATIONALITY-->
             <br>
             <label for="NATIONALITY" class="LNATIONALITY">Nationality</label>
@@ -125,20 +140,24 @@
             <!--DATE OF CHECK IN-- DOCI==DATE OF CHECK IN-->
             <br>
             <label for="DOCI" class="LDOCI">Date of Check In</label>
-            <input type="date" name="DOCI"id="DOCI"min="2023-01-01" max="2023-12-31" class= "IDOCI"><br>
+            <input type="date" name="DOCI"id="DOCI"min="2023-01-01" max="2023-12-31" class= "IDOCI" required><br>
             <span style="color: red; font-weight: 500"><?= $errordateOfCheckIn?></span>
+            <span style="color: red; font-weight: 500"><?= $errordateOfCurrentDate?></span>
             <!--DATE OF CHECK OUT-- DOCU = DATE OF CHECK OUT-->
             <br>
             <label for="DOCU" class="LDOCU">Date of Check Out</label>
-            <input type="date" name="DOCU"id="DOCU"min="2023-01-01" max="2023-12-31" class= "IDOCU"><br>
+            <input type="date" name="DOCU"id="DOCU"min="2023-01-01" max="2023-12-31" class= "IDOCU" required><br>
+            <span style="color: red; font-weight: 500"><?= $errordateOfCurrentDate?></span>
             
             <br>
             <!--NUMBER OF GUEST-->
             <label for="NumberOfAdult" class = "LNumberOfAdult">Number of Adults:</label>
-            <input type = "number" name="NumberOfAdult" id="NumberOfAdult" class=INumberOfAdult><br>
+            <input type = "number" name="NumberOfAdult" id="NumberOfAdult" class=INumberOfAdult required><br>
+            <span style="color: red; font-weight: 500"><?= $errorNumberofGuest?></span>
 
-            <label for="NumberOfKids" class = "LNumberOfKids">Number of Kids:</label>
-            <input type = "number" name="NumberOfKids" id="NumberOfKids" class=INumberOfKids><br>
+            <br><label for="NumberOfKids" class = "LNumberOfKids">Number of Kids:</label>
+            <input type = "number" name="NumberOfKids" id="NumberOfKids" class=INumberOfKids required><br>
+            <br><span style="color: red; font-weight: 500"><?= $errorNumberofGuest?></span>
 
             <input type="submit"name="submit"value="submit"class="btn-Submit"><br>
         </form>
@@ -146,7 +165,7 @@
 
     <?php 
          if(isset($_POST['submit'])){
-            if($errorFname==""&&$errorMname==""&&$errorLname==""&&$errorContact==""&&$errordoci==""&&$errordocu==""){
+            if( $errorFname=="" && $errorMname=="" && $errorLname=="" && $errorContact=="" && $errordoci=="" && $errordateOfCurrentDate=="" && $errorNumberofGuest=="" ){
             error_reporting(0);
             $serverName="LAPTOP-CDRKF784\SQLEXPRESS08";
             $connectionOptions=[
