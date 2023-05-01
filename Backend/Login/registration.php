@@ -23,6 +23,7 @@
     $errorEmail="";
     //variables for dates of check in and check out
     $errordateOfCheckIn = "";
+    $errordateOfCurrentDate = "";
 
     
      //checks if first name is empty and contains text only
@@ -59,113 +60,100 @@
         $errorEmail="Email is required.";
     }
     //checks if the date of check out is ahead before the check in
+    $currentDate = Date('Y-m-d 00:00:00.000');
+    $checkInDate = $_POST['DOCI'];
+    $checkOutDate = $_POST['DOCU'];
     if ($dateOfCheckIn=$_POST['DOCI'] > $dateOfCheckOut=$_POST['DOCU']){
         $errordateOfCheckIn = "The date of check in should be ahead than the date of check out";   
     }
+    else if($checkInDate < $currentDate || $checkOutDate <  $currentDate ){
+        $errordateOfCurrentDate = "The date of is behind of the current date";
+    }
+    //ADULT NUMBER VALIDATION
+    $errorNumberofGuest = "";
+    if(empty($_POST['NumberOfAdult']) || empty($_POST['NumberOfKids'])){
+        $errorNumberofGuest = "Number of People are needed";
+    }else if ((!preg_match("/^[0-9]*$/",$_POST['NumberOfAdult'])) || (!preg_match("/^[0-9]*$/",$_POST['NumberOfKids']))){
+        $errorNumberofGuest = "Positive Numbers Only";
+    }
+
     ?>
     <div class="reg-container">
         <h1 class="title">Registration</h1>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-            <div class="row-nameField">
-                <div class="lastName">
-                    <!--LASTNAME-->
-                    <label for="LNAME"class="LLNAME">LAST NAME</label><br>
-                    <input type="text"name="LNAME"id="LNAME"class="ILNAME" placeholder="LAST NAME"><br>
-                    <span><?= $errorLname?></span>
-                </div>
-                <div class="firstName">
-                    <!--FIRSTNAME-->
-                    <label for="FNAME"class="LFNAME">FIRST NAME</label><br>
-                    <input type="text"name="FNAME"id="FNAME"class="IFNAME" placeholder="FIRST NAME"><br>
-                    <span><?= $errorFname?></span>
-                </div>
-                <div class="middleName">
-                    <!--MIDDLENAME-->
-                    <label for="MNAME"class="LMNAME">MIDDLE NAME</label><br>
-                    <input type="text"name="MNAME"id="MNAME"class="IMNAME" placeholder="MIDDLE NAME"><br>
-                    <span><?= $errorMname?></span>
-                </div>
+            <div class="name-field">
+                <!--FIRSTNAME-->
+                <label for="FNAME"class="LFNAME">FIRST NAME</label>
+                <input type="text"name="FNAME"id="FNAME"class="IFNAME" placeholder="FIRST NAME"><br>
+                <span style="color: red; font-weight: 500"><?= $errorFname?></span>
+                <!--MIDDLENAME-->
+                <br>
+                <label for="MNAME"class="LMNAME">MIDDLE NAME</label>
+                <input type="text"name="MNAME"id="MNAME"class="IMNAME" placeholder="MIDDLE NAME"><br>
+                <span style="color: red; font-weight: 500"><?= $errorMname?></span>
+                <!--LASTNAME-->
+                <br>
+                <label for="LNAME"class="LLNAME">LAST NAME</label>
+                <input type="text"name="LNAME"id="LNAME"class="ILNAME" placeholder="LAST NAME"><br>
+                <span style="color: red; font-weight: 500"><?= $errorLname?></span>
             </div>
+            <!--HOUSE NUMBER-->
+            <br>
+            <label for="hnumber" class="input-hnum">House Number</label>
+            <input id="hnumber" class="input-hnumb" name="HNUMBER" type="text" placeholder="House No."><br>
+            <!--Street/Subdivision-->
+            <br>
+            <label for="subd" class="input-subd">Street/Subdivision</label>
+            <input id="subd" class="input-subdi" name="SUBDI" type="text" placeholder="Street/Subdivision"><br>
+            <!--Barangay-->
+            <br>
+            <label for="brgy" class="input-brgy">Barangay</label>
+            <input id="brgy" class="input-brgyfield" name="BRGY" type="text" placeholder="Barangay"><br>
+            <!--City/Municipality-->
+            <br>
+            <label for="city" class="input-cm">City/Municipality</label>
+            <input type="text" class="input-cityormuni" name="CM"id="cm" placeholder="City/Municipality"><br>
+            <!--EMAIL-->
+            <br>
+            <label for="email"class="LEMAIL">Email</label>
+            <input type="text"name="EMAIL"id="EMAIL"class="IEMAIL" placeholder="EMAIL"><br>
+            <span style="color: red; font-weight: 500"><?= $errorEmail?></span>
+            <!--CONTACT NUMBER-->
+            <br>
+            <label for="CONTACT"class="LCONTACT">Cellphone Number</label>
+            <input type="tel"name="CONTACT"id="CONTACT"class="ICONTACT" placeholder="CONTACT"><br>
+            <span style="color: red; font-weight: 500"><?= $errorContact?></span>
+            <!--GENDER-->
+            <br>
+            <label class = "LGEN">Gender</label>
+            <input id="MALE" name="GENDER" value="MALE" type="radio" class="IGEN"><label for="MALE" class="G">MALE</label>
+            <input id="FEMALE" name="GENDER" value="FEMALE" type="radio" class="IGEN"> <label for="FEMALE" class="G">FEMALE</label>
+            <br>
+            <!--BIRTHDAY-->
+            <br>
+            <label for="BDAY"class="LBDAY">Birthdate</label>
+            <input id="BDAY" name="BDAY" type="date" min="1900-01-01" max="2023-12-31" class="IBDAY"><br>
+            <!--NATIONALITY-->
+            <br>
+            <label for="NATIONALITY" class="LNATIONALITY">Nationality</label>
+            <input type="text"name="NATIONALITY"id="NATIONALITY"class="INATIONALITY"><br>
+            <!--DATE OF CHECK IN-- DOCI==DATE OF CHECK IN-->
+            <br>
+            <label for="DOCI" class="LDOCI">Date of Check In</label>
+            <input type="date" name="DOCI"id="DOCI"min="2023-01-01" max="2023-12-31" class= "IDOCI"><br>
+            <span style="color: red; font-weight: 500"><?= $errordateOfCheckIn?></span>
+            <!--DATE OF CHECK OUT-- DOCU = DATE OF CHECK OUT-->
+            <br>
+            <label for="DOCU" class="LDOCU">Date of Check Out</label>
+            <input type="date" name="DOCU"id="DOCU"min="2023-01-01" max="2023-12-31" class= "IDOCU"><br>
+            
+            <br>
+            <!--NUMBER OF GUEST-->
+            <label for="NumberOfAdult" class = "LNumberOfAdult">Number of Adults:</label>
+            <input type = "number" name="NumberOfAdult" id="NumberOfAdult" class=INumberOfAdult><br>
 
-            <div class="row-addField">
-                <div class="firstAddField">
-                    <div class="housNum">
-                        <!--HOUSE NUMBER-->
-                        <label for="hnumber" class="input-hnum">House Number</label><br>
-                        <input id="hnumber" class="input-hnumb" name="HNUMBER" type="text" placeholder="House No."><br>
-                    </div>
-                    <div class="streetSubdi">
-                        <!--Street/Subdivision-->
-                        <label for="subd" class="input-subd">Street/Subdivision</label><br>
-                        <input id="subd" class="input-subdi" name="SUBDI" type="text" placeholder="Street/Subdivision"><br>
-                    </div>
-                </div>
-                <div class="secondAddField">
-                    <div class="inputBrgy">
-                        <!--Barangay-->
-                        <label for="brgy" class="input-brgy">Barangay</label><br>
-                        <input id="brgy" class="input-brgyfield" name="BRGY" type="text" placeholder="Barangay"><br>                    
-                    </div>
-                    <div class="inputCityOrMuni">
-                        <!--City/Municipality-->
-                        <label for="city" class="input-cm">City/Municipality</label><br>
-                        <input type="text" class="input-cityormuni" name="CM"id="cm" placeholder="City/Municipality"><br>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row-otherDetails">
-                <div class="inputEmail">
-                    <!--EMAIL-->
-                    <label for="email"class="LEMAIL">Email</label><br>
-                    <input type="text"name="EMAIL"id="EMAIL"class="IEMAIL" placeholder="EMAIL"><br>
-                    <span><?= $errorEmail?></span>
-                </div>
-                <div class="contactNum">
-                    <!--CONTACT NUMBER-->
-                    <label for="CONTACT"class="LCONTACT">Cellphone Number</label><br>
-                    <input type="tel"name="CONTACT"id="CONTACT"class="ICONTACT" placeholder="CONTACT"><br>
-                    <span><?= $errorContact?></span>
-                </div>
-                <div class="inputGender">
-                    <!--GENDER-->
-                    <label class = "LGEN">Gender</label><br>
-                    <input id="MALE" name="GENDER" value="MALE" type="radio" class="IGEN"><label for="MALE" class="G">MALE</label>
-                    <input id="FEMALE" name="GENDER" value="FEMALE" type="radio" class="IGEN"> <label for="FEMALE" class="G">FEMALE</label>
-                </div>
-                <div class="birthDate">
-                    <!--BIRTHDAY-->
-                    <label for="BDAY"class="LBDAY">Birthdate</label><br>
-                    <input id="BDAY" name="BDAY" type="date" min="1900-01-01" max="2023-12-31" class="IBDAY"><br>
-                </div>
-                <div class="inputNationality">
-                    <!--NATIONALITY-->
-                    <label for="NATIONALITY" class="LNATIONALITY">Nationality</label><br>
-                    <input type="text"name="NATIONALITY"id="NATIONALITY"class="INATIONALITY"><br>
-                </div>
-            </div>
-            <div class="row-bookingDetails">
-                <div class="checkInDate">
-                    <!--DATE OF CHECK IN-- DOCI==DATE OF CHECK IN-->
-                    <label for="DOCI" class="LDOCI">Date of Check In</label><br>
-                    <input type="date" name="DOCI"id="DOCI"min="2023-01-01" max="2023-12-31" class= "IDOCI"><br>
-                    <span style="color: red; font-weight: 400"><?= $errordateOfCheckIn?></span>                    
-                </div>
-                <div class="checkOutDate">
-                    <!--DATE OF CHECK OUT-- DOCU = DATE OF CHECK OUT-->
-                    <label for="DOCU" class="LDOCU">Date of Check Out</label><br>
-                    <input type="date" name="DOCU"id="DOCU"min="2023-01-01" max="2023-12-31" class= "IDOCU"><br>                    
-                </div>
-                <!--NUMBER OF GUEST-->
-                <div class="numOfAdult">
-                    <label for="NumberOfAdult" class = "LNumberOfAdult">Number of Adults:</label><br>
-                    <input type = "number" name="NumberOfAdult" id="NumberOfAdult" class=INumberOfAdult><br>                    
-                </div>
-                <div class="numOfKids">
-                    <label for="NumberOfKids" class = "LNumberOfKids">Number of Kids:</label><br>
-                    <input type = "number" name="NumberOfKids" id="NumberOfKids" class=INumberOfKids><br>
-                </div>
-            </div>
+            <label for="NumberOfKids" class = "LNumberOfKids">Number of Kids:</label>
+            <input type = "number" name="NumberOfKids" id="NumberOfKids" class=INumberOfKids><br>
 
             <input type="Submit"name="Submit"value="Submit"class="btn-Submit"><br>
         </form>
@@ -175,7 +163,7 @@
 
     <?php 
          if(isset($_POST['submit'])){
-            if($errorFname==""&&$errorMname==""&&$errorLname==""&&$errorContact==""&&$errordoci==""&&$errordocu==""){
+            if( $errorFname=="" && $errorMname=="" && $errorLname=="" && $errorContact=="" && $errordoci=="" && $errordateOfCurrentDate=="" && $errorNumberofGuest=="" ){
             error_reporting(0);
             $serverName="LAPTOP-CDRKF784\SQLEXPRESS08";
             $connectionOptions=[
