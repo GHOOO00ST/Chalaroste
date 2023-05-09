@@ -25,4 +25,9 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Poppins", sans-serif;
-}/*# sourceMappingURL=admindb.css.map */
+}
+
+.container {
+  background-color: var(--mainText2);
+  width: 200px;
+}/*# sourceMappingURL=adminlogin.css.map */
