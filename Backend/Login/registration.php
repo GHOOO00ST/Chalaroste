@@ -59,7 +59,7 @@
         $errorEmail="Email is required.";
     }
     //checks if the date of check out is ahead before the check in
-    if ($dateOfCheckIn=$_POST['DOCI'] > $dateOfCheckOut=$_POST['DOCU']){
+    if ($dateOfCheckIn=ST['DOCI'] > $dateOfCheckOut=$_POST['DOCU']){
         $errordateOfCheckIn = "The date of check in should be ahead than the date of check out";   
     }
     ?>
