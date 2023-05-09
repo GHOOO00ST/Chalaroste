@@ -1,0 +1,236 @@
+/**FONTS**/
+/**Poppins**/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+/**Source Code Pro**/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+/**COLORS**/
+:root {
+    --color1: #04724D;
+    --color2: #FF9F1C;
+    --color3: #EBEAE1;
+    --subText: #6E8387;
+    --subText2: #A4303F;
+    --mainText: #222222;
+    --mainText2: #FFFCE8;
+}
+
+body {
+    margin: 0%;
+    padding: 0%;
+    background-color: var(--mainText);
+    min-height: 100vh;
+    box-sizing: border-box;
+    width: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/**main container**/
+.reg-container {
+    background-color: var(--mainText2);
+    position: flex;
+    width: 700px;
+    height: 800px;
+    left: calc(50% - 700px/2);
+    top: calc(50% - 800px/2);
+    padding: 10px;
+
+    .title {
+        text-align: center;
+        color: var(--mainText);
+        font-size: 42px;
+    }
+    .subtxt {
+        font-family: 'Poppins', sans-serif;
+        font-size: 10px;
+        font-style: italic;
+        color: var(--mainText);
+        font-weight: 500;
+        text-align: center;
+
+        margin-top: 125px;
+    }
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/**Name Field**/
+.row-nameField {
+    justify-content: center;
+    align-items: center;
+    flex-basis: 30%;
+    padding: 5px;
+    column-count: 3;
+    column-gap: 20px;
+
+    /**labels**/
+    .lastName label{
+        color: var(--color1);
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .firstName label{
+        color: var(--color1);
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .middleName label{
+        color: var(--color2);
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    /**inputs**/
+    .lastName input {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+
+        width: 100%;
+        height: 16px;
+        padding-left: 5px;
+    }
+    .firstName input {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+
+        width: 100%;
+        height: 16px;
+        padding-left: 5px;
+    }
+    .middleName input {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+
+        width: 60%;
+        height: 16px;
+        padding-left: 5px;
+    }
+
+    /**span text**/
+    .lastName span {
+        color: red;
+        font-size: 10px;
+        font-style: italic;
+    }
+    .firstName span {
+        color: red;
+        font-size: 10px;
+        font-style: italic;
+    }
+    .middleName span {
+        color: red;
+        font-size: 10px;
+        font-style: italic;
+    }
+
+}
+
+/**Address Field**/
+.row-addField {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-count: 2;
+    column-gap: 12px;
+
+    .firstAddField {
+        margin-top: 12px;
+    }
+
+    .secondAddField {
+        margin-top: 12px;
+
+    }
+
+    /**labels**/
+    .housNum label {
+        color: var(--color1);
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .streetSubdi label {
+        color: var(--color1);
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .inputBrgy label {
+        color: var(--color1);
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .inputCityOrMuni label {
+        color: var(--color1);
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    /**inputs**/
+    .housNum input {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+
+        width: 120%;
+        height: 16px;
+        padding-left: 5px;
+    }
+    .streetSubdi input {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+
+        width: 120%;
+        height: 16px;
+        padding-left: 5px;
+    }
+    .inputBrgy input {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+
+        width: 120%;
+        height: 16px;
+        padding-left: 5px;
+    }
+    .inputCityOrMuni input {
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+
+        width: 120%;
+        height: 16px;
+        padding-left: 5px;
+    }
+}
+
+.row-otherDetails {
+    .inputEmail span {
+        color: red;
+        font-size: 10px;
+        font-style: italic;
+    }
+
+    .contactNum span{
+        color: red;
+        font-size: 10px;
+        font-style: italic;
+    }
+}
+
