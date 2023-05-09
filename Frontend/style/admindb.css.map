@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "admindb.scss"
-    ],
-    "names": [],
-    "file": "admindb.css"
-}
+{"version":3,"sources":["admindb.scss","admindb.css"],"names":[],"mappings":"AAAA,UAAA;AACA,YAAA;AACQ,2PAAA;AACR,oBAAA;AACQ,sOAAA;AAER,WAAA;AACA;EACI,iBAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,mBAAA;EACA,mBAAA;EACA,oBAAA;ACAJ;;ADGA;EACI,UAAA;EACA,WAAA;EACA,iCAAA;EACA,iBAAA;EACA,sBAAA;EACA,WAAA;EAEA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,kCAAA;ACDJ","file":"admindb.css"}
