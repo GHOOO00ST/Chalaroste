@@ -28,3 +28,28 @@ body {
     align-items: center;
     font-family: 'Poppins', sans-serif;
 }
+
+.container {
+    background-color: var(--mainText2);
+    width: 500px;
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-form {
+    .title {
+        font-size: 32px;
+        color: var(--mainText);
+    }
+    
+    .input-field input{
+        width: 50%;
+        height: 16px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: 2px;
+    }
+}
