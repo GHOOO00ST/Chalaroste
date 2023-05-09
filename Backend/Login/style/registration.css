@@ -69,7 +69,6 @@ body {
        column-gap: 20px;
   /**labels**/
   /**inputs**/
-  /**span text**/
 }
 .row-nameField .lastName label {
   color: var(--color1);
@@ -112,21 +111,6 @@ body {
   width: 60%;
   height: 16px;
   padding-left: 5px;
-}
-.row-nameField .lastName span {
-  color: red;
-  font-size: 10px;
-  font-style: italic;
-}
-.row-nameField .firstName span {
-  color: red;
-  font-size: 10px;
-  font-style: italic;
-}
-.row-nameField .middleName span {
-  color: red;
-  font-size: 10px;
-  font-style: italic;
 }
 
 /**Address Field**/
@@ -210,6 +194,12 @@ body {
   font-style: italic;
 }
 .row-otherDetails .contactNum span {
+  color: red;
+  font-size: 10px;
+  font-style: italic;
+}
+
+.error {
   color: red;
   font-size: 10px;
   font-style: italic;
