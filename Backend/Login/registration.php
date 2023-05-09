@@ -46,6 +46,7 @@
             $FNM = trim($_POST['MNAME']);
             if (!preg_match('/^[a-zA-Z ]+$/', $FNM)) {
             $errors['FNAME'] = 'Name must contain only letters and spaces';
+<<<<<<< HEAD
             }
         }
 
@@ -187,9 +188,108 @@
                 echo 'Registration LoginSuccessful';
             }else{
                 echo 'Error';
+=======
+>>>>>>> 2eb98066676cf3859677caab0b4a5e170223fd4e
             }
             
         }
+<<<<<<< HEAD
+=======
+
+    //checks if the middle name is empty and contains text only
+    if (empty($_POST['MNAME'])) {
+            $errors['MNAME'] = 'Middlename is required';
+    } else {
+        $MNM = trim($_POST['MNAME']);
+        if (!preg_match('/^[a-zA-Z ]+$/', $MNM)) {
+        $errors['MNAME'] = 'Name must contain only letters and spaces';
+        }
+    }
+
+        //checks if last name is empty and contains text only
+    if (empty($_POST['LNAME'])) {
+            $errors['LNAME'] = 'Name is required';
+    } else {
+        $LNM = trim($_POST['LNAME']);
+        if (!preg_match('/^[a-zA-Z ]+$/', $LNM)) {
+        $errors['LNAME'] = 'Name must contain only letters and spaces';
+        }
+    }
+    // checks if email is empty
+    if (empty($_POST['EMAIL'])) {
+        $errors['EMAIL'] = 'Email is required';
+    } else {
+        $EMAIL = trim($_POST['EMAIL']);
+        if (!filter_var($EMAIL, FILTER_VALIDATE_EMAIL)) {
+        $errors['EMAIL'] = 'Invalid email format';
+        }
+    }
+
+    // ADULT NUMBER VALIDATION
+    $NumberOfAdult = $_POST['NumberOfAdult'];
+    // Validate that the input field only contains positive numbers and is not empty
+    if (!ctype_digit($NumberOfAdult) || $NumberOfAdult < 0){
+    $errors['NumberOfAdult'] = 'Please enter a valid positive number';
+    }
+    // KIDS NUMBER VALIDATION
+    $NumberOfKids = $_POST['NumberOfKids'];
+    // Validate that the input field only contains positive numbers and is not empty
+    if (!ctype_digit($NumberOfKids) || $NumberOfKids < 0){
+        $errors['NumberOfKids'] = 'Please enter a valid positive number';
+    }
+
+
+    //validation for Privacy
+    if (empty($_POST['agree'])) {
+        $errors['agree'] = 'You must agree to the privacy policy';
+    }
+
+    if (empty($errors)) {
+        // Save the data to a database or send an email, etc.
+        // ...
+        // Redirect to a thank-you page
+        error_reporting(0);
+        $serverName="LAPTOP-CDRKF784\SQLEXPRESS08";
+        $connectionOptions=[
+        "Database"=>"DLSU",
+        "Uid"=>"",
+        "PWD"=>""
+        ];
+        $conn=sqlsrv_connect($serverName, $connectionOptions);
+        if($conn==false)
+            die(print_r(sqlsrv_errors(),true));
+    
+            $FNM = $_POST['FNAME'];
+            $MNM = $_POST['MNAME'];
+            $LNM = $_POST['LNAME'];
+            $HN = $_POST['HNUMBER'];
+            $SBS = $_POST['SUBDI'];
+            $BRGY = $_POST['BRGY'];
+            $CMY = $_POST['CM'];
+            $EML = $_POST['EMAIL'];
+            $CNM = $_POST['CONTACT'];
+            $GND = $_POST['GENDER'];
+            $BDY = $_POST['BDAY'];
+            $NTN = $_POST['NATIONALITY'];
+            $dateOfCin= $_POST['DOCI'];
+            $dateOfCout = $_POST['DOCU'];
+            $NumberOfAdult = $_POST['NumberOfAdult'];
+            $NumberOfKids = $_POST['NumberOfKids'];
+    
+    
+            $SQL = "INSERT INTO REGISTRATION(F_NAME,M_NAME,L_NAME,H_NUMBER,SUBDIVISION,BRGY,CITY_MUNICIPALITY,EMAIL,CONTACT,GENDER,BDAY,NATIONALITY,DATE_OF_CHECK_IN,DATE_OF_CHECK_OUT,NUMBER_OF_ADULTS,NUMBER_OF_KIDS)
+            VALUES('$FNM','$MNM','$LNM','$HN','$SBS','$BRGY','$CMY','$EML','$CNM','$GND','$BDY','$NTN','$dateOfCin','$dateOfCout','$NumberOfAdult','$NumberOfKids')";
+            $RSLTS = sqlsrv_query($conn,$SQL);
+            if($RSLTS){
+                header("location: http://localhost/Chalaroste/Frontend/Login%20Page/regsuccess.html");//to be replace with an actual link
+                exit();
+                echo 'Registration LoginSuccessful';
+            }else{
+                echo 'Error';
+            }
+            
+        }
+>>>>>>> 2eb98066676cf3859677caab0b4a5e170223fd4e
     }
 ?>
 <div class="reg-container">
