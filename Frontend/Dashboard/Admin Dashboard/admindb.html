@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--stylesheet/css-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admindb.css">
+    <!--material icons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--title-->
+    <title>CHALAROSTE | Admin Dashboard</title>
+</head>
+<body>
+  <!--NAVIGATION BAR-->
+  <div class="navbar">
+    <h1>CHALAROSTE</h1>
+    <div class="side-menu">
+      <ul>
+        <li><a href="">Dashboard</a></li>
+        <li><a href="">ChatDog</a></li>
+        <li><a href="">Guests</a></li>
+        <li><a href="">Analytics</a></li>
+        <li><a href="">Staff</a></li>
+        <li><a href="">Setting</a></li>
+        <li>
+          <button onclick="reportFunction()" class="btns">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!--SEARCH BAR-->
+  <!--LOG OUT-->
+  <script>
+    function reportFunction(){
+        window.location.href = "http://localhost/Chalaroste/Backend/Login/admin.php"; //to be replace with an actual link
+    }
+  </script>
+</body>
+</html>

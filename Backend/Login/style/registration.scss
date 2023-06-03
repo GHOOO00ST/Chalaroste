@@ -1,24 +1,29 @@
 /**FONTS**/
-/**Poppins**/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
-/**Source Code Pro**/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    src: url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap) format('woff');
+  }
 
 /**COLORS**/
 :root {
-    --color1: #04724D;
-    --color2: #FF9F1C;
-    --color3: #EBEAE1;
-    --subText: #6E8387;
-    --subText2: #A4303F;
-    --mainText: #222222;
-    --mainText2: #FFFCE8;
+    --success: #04724D;
+    --warning: #FF9F1C;
+    --addedcolor: #EBEAE1;
+    --subtext-light: #dee2e6;
+    --subtext-dark: #3C4048;
+    --error: #A4303F;
+    --fontcolor: #222222; //can be the bg color
+    --backgroundcolor: #FFFCE8; //can be the bg color
 }
 
 body {
     margin: 0%;
     padding: 0%;
-    background-color: var(--mainText);
+    background-image: url('/Backend/Login/Assets/Registration.png');
+    background: #222222;
     min-height: 100vh;
     box-sizing: border-box;
     width: auto;
@@ -29,190 +34,110 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-/**main container**/
 .reg-container {
-    background-color: var(--mainText2);
-    position: flex;
-    width: 700px;
-    height: 800px;
-    left: calc(50% - 700px/2);
-    top: calc(50% - 800px/2);
-    padding: 10px;
+    width: 450px;
+    height: auto;
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--backgroundcolor);
 
     .title {
+        font-size: 36px;
+        margin: 0;
+        padding: 0;
         text-align: center;
-        color: var(--mainText);
-        font-size: 42px;
+        color: var(--fontcolor);
     }
-    .subtxt {
-        font-family: 'Poppins', sans-serif;
-        font-size: 10px;
-        font-style: italic;
-        color: var(--mainText);
+
+    .sub-title {
+        font-size: 16px;
+        text-align: center;
         font-weight: 500;
-        text-align: center;
-
-        margin-top: 125px;
+        color: var(--subtext-dark);
+        margin: 0;
+        padding: 0;
     }
 }
 
-.form {
-    display: flex;
-    flex-wrap: wrap;
+//name field
+.row-nameField, .row-addField, .row-bookingDetails {
+    padding-bottom: 24px;
+    label {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--fontcolor);
+    }
+
+    input {
+        font-size: 16px;
+        height: 16px;
+        width: 45%;
+        padding: 4px;
+        padding-left: 6px;
+    
+        border: none;
+        background-color: var(--addedcolor);
+        font-family: 'Poppins', sans-serif;
+    }
 }
 
-/**Name Field**/
 .row-nameField {
     justify-content: center;
-    align-items: center;
-    flex-basis: 30%;
-    padding: 5px;
-    column-count: 3;
-    column-gap: 20px;
-
-    /**labels**/
-    .lastName label{
-        color: var(--color1);
-        font-family: 'Poppins', sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-    }
-    .firstName label{
-        color: var(--color1);
-        font-family: 'Poppins', sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-    }
-    .middleName label{
-        color: var(--color2);
-        font-family: 'Poppins', sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-    }
-
-    /**inputs**/
-    .lastName input {
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-
-        width: 100%;
-        height: 16px;
-        padding-left: 5px;
-    }
-    .firstName input {
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-
-        width: 100%;
-        height: 16px;
-        padding-left: 5px;
-    }
-    .middleName input {
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-
-        width: 60%;
-        height: 16px;
-        padding-left: 5px;
+    .lastName, .firstName{
+        padding-bottom: 12px;
     }
 }
 
-/**Address Field**/
 .row-addField {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-count: 2;
-    column-gap: 12px;
-
-    .firstAddField {
-        margin-top: 12px;
-    }
-
-    .secondAddField {
-        margin-top: 12px;
-
-    }
-
-    /**labels**/
-    .housNum label {
-        color: var(--color1);
-        font-family: 'Poppins', sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-    }
-    .streetSubdi label {
-        color: var(--color1);
-        font-family: 'Poppins', sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-    }
-    .inputBrgy label {
-        color: var(--color1);
-        font-family: 'Poppins', sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-    }
-    .inputCityOrMuni label {
-        color: var(--color1);
-        font-family: 'Poppins', sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-    }
-
-    /**inputs**/
-    .housNum input {
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-
-        width: 120%;
-        height: 16px;
-        padding-left: 5px;
-    }
-    .streetSubdi input {
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-
-        width: 120%;
-        height: 16px;
-        padding-left: 5px;
-    }
-    .inputBrgy input {
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-
-        width: 120%;
-        height: 16px;
-        padding-left: 5px;
-    }
-    .inputCityOrMuni input {
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-
-        width: 120%;
-        height: 16px;
-        padding-left: 5px;
+    .housNum, .streetSubdi, .inputBrgy {
+        padding-bottom: 12px;
     }
 }
 
+//other details
 .row-otherDetails {
-    .inputEmail span {
-        color: red;
-        font-size: 10px;
-        font-style: italic;
+    label {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--fontcolor);
     }
 
-    .contactNum span{
-        color: red;
-        font-size: 10px;
+    .inputEmail input, .contactNum input, .birthDate input, .inputNationality input{
+        font-size: 16px;
+        height: 16px;
+        width: 45%;
+        padding: 4px;
+        padding-left: 6px;
+    
+        border: none;
+        background-color: var(--addedcolor);
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+.inputGender .IGEN{
+    height: 14px;
+    width: auto;
+    padding-right: 24px;
+}
+
+.rowPrivacy {
+    label {
+        font-size: 14px;
+    }
+
+    #agree {
+        width: 14px;
+        height: auto;
+        margin: 2px 0 0 0;
+        padding: 0;
+    }
+
+    .subtxt {
+        font-size: 12px;
         font-style: italic;
+        text-align: center;
     }
 }
 

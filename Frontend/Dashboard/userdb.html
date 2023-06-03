@@ -4,46 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Frontend/style/userdb.scss" class="rel">
+    <link rel="stylesheet" href="./userdb.css" class="rel">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>CHLRSTE: User Dashboard</title>
 </head>
 <body>
-    <p>Lights</p>
-    <div class="btn-light-container">
-        <div class="btn-divslider">
-            <input type="range" min="0" max="100" value="50" class="btn-slider" id="mySlider">
+    <!--NAVBAR-->
+    <div class="topnav">
+        <h1>CHALAROSTE</h1>
+        <div id="menu-btns" class="menu-items">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">ChatDog</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Settings</a></li>
+            <li>
+                <button onclick="reportFunction()" class="btns">Logout</button>
+            </li>
         </div>
-        <div class="btn-onOff">
-            <input type="button" id="On-light" value="On" class="">
-            <input type="button" id="Off-light" value="Off" class="">
-        </div>
-        <div class="btn-Lightspresetbutton">
-             <input type="button" value="Dim" id="preDim" class="">
-             <input type="button" value="Reading" id="preRead" class="">
-             <input type="button" value="Bright" id="preBright" class="">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    
+    <!--DEVICES-->
+    <!--LIGHTS-->
+    <div class="LivingRoom">
+        <h1 class="title-LivingRoom">Living Room</h1>
+        <div class="btn-light-container">
+            <img src="Assets/christopher-jolly-GqbU78bdJFM-unsplash.jpg" alt="">
+            <div class="btn-onOff">
+                <input type="button" id="On-light" value="On" class="btn">
+                <input type="button" id="Off-light" value="Off" class="btn">
+            </div>
         </div>
     </div>
-    <p>Tv</p>
-    <div class="btn-tv-container">
-            <input type="button" id="On-tv" value="On" class="">
-            <input type="button" id="Off-tv" value="Off" class="">
-    </div>
-    <p>Blinds</p>
-    <div class="btn-Blinds-container">
-        <div class="Blinds-presetButton">
-            <input type="button" value="Low" id="preLow" class="">
-            <input type="button" value="Medium" id="preMedium" class="">
-            <input type="button" value="High" id="preHigh" class="">
-        </div>
-        <div class="btn-UpAndDown">
-            <input type="button" value="On" id="On-Blinds" class="">
-            <input type="button" value="Off" id="Off-Blinds" class="">
+
+    <div class="BedRoom">
+        <h1 class="title-BedRoom">Bedroom</h1>
+        <div class="btn-light-container">
+            <img src="Assets/dan-gold-4HG3Ca3EzWw-unsplash.jpg" alt="">
+            <div class="btn-onOff">
+                <input type="button" id="On-light" value="On" class="btn-bed">
+                <input type="button" id="Off-light" value="Off" class="btn-bed">
+            </div>
         </div>
     </div>
-    <button onclick="reportFunction()" class="btns">Logout</button>
+
+    <!--BLINDS-->
+    <div class="Blinds">
+        <h1 class="title-Blinds">Blinds</h1>
+        <div class="btn-Blinds-container">
+            <img src="Assets/ducminh-nguyen-hG3H6N6VwCY-unsplash.jpg" alt="">
+            <div class="btn-UpAndDown">
+                <input type="button" value="Up" id="On-Blinds" class="">
+                <input type="button" value="Down" id="Off-Blinds" class="">
+            </div>
+        </div>
+    </div>
+ 
     <script>
         function reportFunction(){
             window.location.href = "http://localhost/Chalaroste/Backend/Login/loginpage.php"; //to be replace with an actual link
+        }
+    </script>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("menu-btns");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
         }
     </script>
 </body>
