@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="style/registration.scss" rel='stylesheet'>
+        <link href='style/registration.css' rel='stylesheet'>
         <title>CHALAROSTE | Registration. Book your place now!</title>
     </head>
 </html>
@@ -148,6 +148,7 @@
 
     <div class="reg-container">
         <h1 class="title">Registration</h1>
+        <h2 class="sub-title">Experience true comfort and luxury.</h2>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
             <div class="row-nameField">
                 <div class="lastName">
@@ -171,29 +172,25 @@
             </div>
 
             <div class="row-addField">
-                <div class="firstAddField">
-                    <div class="housNum">
-                        <!--HOUSE NUMBER-->
-                        <label for="hnumber" class="input-hnum">House Number</label><br>
-                        <input id="hnumber" class="input-hnumb" name="HNUMBER" type="text" placeholder="House No."><br>
-                    </div>
-                    <div class="streetSubdi">
-                        <!--Street/Subdivision-->
-                        <label for="subd" class="input-subd">Street/Subdivision</label><br>
-                        <input id="subd" class="input-subdi" name="SUBDI" type="text" placeholder="Street/Subdivision"><br>
-                    </div>
+                <div class="housNum">
+                    <!--HOUSE NUMBER-->
+                    <label for="hnumber" class="input-hnum">House Number</label><br>
+                    <input id="hnumber" class="input-hnumb" name="HNUMBER" type="text" placeholder="House No."><br>
                 </div>
-                <div class="secondAddField">
-                    <div class="inputBrgy">
-                        <!--Barangay-->
-                        <label for="brgy" class="input-brgy">Barangay</label><br>
-                        <input id="brgy" class="input-brgyfield" name="BRGY" type="text" placeholder="Barangay"><br>                    
-                    </div>
-                    <div class="inputCityOrMuni">
-                        <!--City/Municipality-->
-                        <label for="city" class="input-cm">City/Municipality</label><br>
-                        <input type="text" class="input-cityormuni" name="CM"id="cm" placeholder="City/Municipality"><br>
-                    </div>
+                <div class="streetSubdi">
+                    <!--Street/Subdivision-->
+                    <label for="subd" class="input-subd">Street/Subdivision</label><br>
+                    <input id="subd" class="input-subdi" name="SUBDI" type="text" placeholder="Street/Subdivision"><br>
+                </div>
+                <div class="inputBrgy">
+                    <!--Barangay-->
+                    <label for="brgy" class="input-brgy">Barangay</label><br>
+                    <input id="brgy" class="input-brgyfield" name="BRGY" type="text" placeholder="Barangay"><br>                    
+                </div>
+                <div class="inputCityOrMuni">
+                    <!--City/Municipality-->
+                    <label for="city" class="input-cm">City/Municipality</label><br>
+                    <input type="text" class="input-cityormuni" name="CM"id="cm" placeholder="City/Municipality"><br>
                 </div>
             </div>
 
@@ -229,6 +226,7 @@
                     <input type="text"name="NATIONALITY"id="NATIONALITY"class="INATIONALITY"><br>
                 </div>
             </div>
+            
             <div class="row-bookingDetails">
                 <div class="checkInDate">
                     <!--DATE OF CHECK IN-- DOCI==DATE OF CHECK IN-->

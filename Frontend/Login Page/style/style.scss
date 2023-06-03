@@ -1,0 +1,53 @@
+/**FONTS**/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    src: url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap) format('woff');
+  }
+
+/**COLORS**/
+:root {
+    --success: #04724D;
+    --warning: #FF9F1C;
+    --addedcolor: #EBEAE1;
+    --subtext-light: #dee2e6;
+    --subtext-dark: #3C4048;
+    --error: #A4303F;
+    --fontcolor: #222222; //can be the bg color
+    --backgroundcolor: #FFFCE8; //can be the bg color
+}
+
+body {
+    margin: 0%;
+    padding: 20%;
+    background-color: var(--backgroundcolor);
+    box-sizing: border-box;
+    width: auto;
+
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    color: var(--fontcolor);
+}
+
+//admin verification page
+.verification {
+    font-size: 32px;
+}
+
+//guest verification page
+.user-verify {
+    text-align: center;
+    padding: 30%;
+}
+
+.user-verifcation {
+    font-size: 64px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+//registration successful

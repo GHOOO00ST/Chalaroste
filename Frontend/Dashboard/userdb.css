@@ -1,0 +1,231 @@
+/**FONTS**/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  src: url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap) format("woff");
+}
+/**COLORS**/
+:root {
+  --success: #04724D;
+  --warning: #FF9F1C;
+  --addedcolor: #EBEAE1;
+  --subtext-light: #dee2e6;
+  --subtext-dark: #3C4048;
+  --error: #A4303F;
+  --fontcolor: #222222;
+  --backgroundcolor: #FFFCE8;
+  --lighter-green: #B3EFB2;
+  --mid-green: #a7c957;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--backgroundcolor);
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: var(--addedcolor);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  list-style: none;
+  padding: 12px;
+}
+
+.topnav h1 {
+  margin-top: 2px;
+}
+
+/*hide links except for logo*/
+.topnav #menu-btns {
+  display: none;
+}
+
+.topnav a {
+  padding: 8px;
+  text-decoration: none;
+  display: block;
+}
+
+.topnav button {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--error);
+  background-color: transparent;
+  border: none;
+  padding: 12px 0 12px 12px;
+}
+
+/*hamburger menu*/
+.topnav a.icon {
+  font-size: 24px;
+  color: var(--fontcolor);
+  display: block;
+  position: absolute;
+  right: 7px;
+  top: 10px;
+}
+
+.topnav li:hover {
+  background-color: var(--subtext-light);
+  color: var(--fontcolor);
+  padding: 4px;
+  transition: 0.3s ease;
+}
+
+.LivingRoom, .BedRoom, .Blinds {
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.LivingRoom {
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-LivingRoom .title-BedRoom .title-Blinds {
+  font-size: 24px;
+  color: var(--fontcolor);
+}
+
+.btn-light-container {
+  background-color: var(--addedcolor);
+  width: 320px;
+  height: auto;
+  padding: 16px;
+  border-radius: 6px;
+  display: flex;
+  margin: 24px;
+  display: block;
+}
+
+.btn, .btn-bed {
+  position: relative;
+  top: 35%;
+  left: 25%;
+  transform: translate(-50%, 10%);
+  -ms-transform: translate(-50%, -50%);
+  color: var(--fontcolor);
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.btn-light-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+#On-light, #Off-light {
+  width: 153px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin: 4px 2px;
+  color: var(--subtext-light);
+}
+
+#On-light {
+  background-color: var(--success);
+}
+
+#Off-light {
+  background-color: var(--subtext-dark);
+}
+
+#On-light:hover {
+  background-color: #a7c957;
+  transition: 0.3s ease;
+}
+
+#Off-light:hover {
+  background-color: var(--subtext-light);
+  transition: 0.3s ease;
+  color: var(--fontcolor);
+  border: 1px #222222;
+}
+
+.btn-Blinds-container {
+  background-color: var(--addedcolor);
+  width: 320px;
+  height: auto;
+  padding: 16px;
+  border-radius: 6px;
+  display: block;
+  margin: 24px;
+}
+
+.btn-Blinds-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+#On-Blinds, #Off-Blinds {
+  position: relative;
+  top: 35%;
+  left: 25%;
+  transform: translate(-50%, 10%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  color: var(--fontcolor);
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+}
+
+#On-Blinds, #Off-Blinds {
+  width: 153px;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin: 4px 2px;
+  color: var(--subtext-light);
+}
+
+#On-Blinds {
+  background-color: var(--success);
+}
+
+#Off-Blinds {
+  background-color: var(--subtext-dark);
+}
+
+#On-Blinds:hover {
+  background-color: #a7c957;
+  transition: 0.3s ease;
+}
+
+#Off-Blinds:hover {
+  background-color: var(--subtext-light);
+  transition: 0.3s ease;
+  color: var(--fontcolor);
+  border: 1px #222222;
+}/*# sourceMappingURL=userdb.css.map */

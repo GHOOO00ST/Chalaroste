@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
     <!--CSS-->
-    <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="style/adminlogin.scss">
     <!--Box Icons-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href='style/adminlogin.scss' rel='stylesheet'>

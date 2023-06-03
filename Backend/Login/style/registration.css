@@ -1,23 +1,27 @@
 /**FONTS**/
-/**Poppins**/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
-/**Source Code Pro**/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  src: url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap) format("woff");
+}
 /**COLORS**/
 :root {
-  --color1: #04724D;
-  --color2: #FF9F1C;
-  --color3: #EBEAE1;
-  --subText: #6E8387;
-  --subText2: #A4303F;
-  --mainText: #222222;
-  --mainText2: #FFFCE8;
+  --success: #04724D;
+  --warning: #FF9F1C;
+  --addedcolor: #EBEAE1;
+  --subtext-light: #dee2e6;
+  --subtext-dark: #3C4048;
+  --error: #A4303F;
+  --fontcolor: #222222;
+  --backgroundcolor: #FFFCE8;
 }
 
 body {
   margin: 0%;
   padding: 0%;
-  background-color: var(--mainText);
+  background-image: url("/Backend/Login/Assets/Registration.png");
+  background: #222222;
   min-height: 100vh;
   box-sizing: border-box;
   width: auto;
@@ -27,176 +31,95 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/**main container**/
 .reg-container {
-  background-color: var(--mainText2);
-  position: flex;
-  width: 700px;
-  height: 800px;
-  left: calc(50% - 350px);
-  top: calc(50% - 400px);
-  padding: 10px;
+  width: 450px;
+  height: auto;
+  padding: 24px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--backgroundcolor);
 }
 .reg-container .title {
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
   text-align: center;
-  color: var(--mainText);
-  font-size: 42px;
+  color: var(--fontcolor);
 }
-.reg-container .subtxt {
-  font-family: "Poppins", sans-serif;
-  font-size: 10px;
-  font-style: italic;
-  color: var(--mainText);
+.reg-container .sub-title {
+  font-size: 16px;
+  text-align: center;
   font-weight: 500;
-  text-align: center;
-  margin-top: 125px;
+  color: var(--subtext-dark);
+  margin: 0;
+  padding: 0;
 }
 
-.form {
-  display: flex;
-  flex-wrap: wrap;
+.row-nameField, .row-addField, .row-bookingDetails {
+  padding-bottom: 24px;
+}
+.row-nameField label, .row-addField label, .row-bookingDetails label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fontcolor);
+}
+.row-nameField input, .row-addField input, .row-bookingDetails input {
+  font-size: 16px;
+  height: 16px;
+  width: 45%;
+  padding: 4px;
+  padding-left: 6px;
+  border: none;
+  background-color: var(--addedcolor);
+  font-family: "Poppins", sans-serif;
 }
 
-/**Name Field**/
 .row-nameField {
   justify-content: center;
-  align-items: center;
-  flex-basis: 30%;
-  padding: 5px;
-  -moz-column-count: 3;
-       column-count: 3;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
-  /**labels**/
-  /**inputs**/
 }
-.row-nameField .lastName label {
-  color: var(--color1);
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-}
-.row-nameField .firstName label {
-  color: var(--color1);
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-}
-.row-nameField .middleName label {
-  color: var(--color2);
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-}
-.row-nameField .lastName input {
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  width: 100%;
-  height: 16px;
-  padding-left: 5px;
-}
-.row-nameField .firstName input {
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  width: 100%;
-  height: 16px;
-  padding-left: 5px;
-}
-.row-nameField .middleName input {
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  width: 60%;
-  height: 16px;
-  padding-left: 5px;
+.row-nameField .lastName, .row-nameField .firstName {
+  padding-bottom: 12px;
 }
 
-/**Address Field**/
-.row-addField {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -moz-column-count: 2;
-       column-count: 2;
-  -moz-column-gap: 12px;
-       column-gap: 12px;
-  /**labels**/
-  /**inputs**/
-}
-.row-addField .firstAddField {
-  margin-top: 12px;
-}
-.row-addField .secondAddField {
-  margin-top: 12px;
-}
-.row-addField .housNum label {
-  color: var(--color1);
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-}
-.row-addField .streetSubdi label {
-  color: var(--color1);
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-}
-.row-addField .inputBrgy label {
-  color: var(--color1);
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-}
-.row-addField .inputCityOrMuni label {
-  color: var(--color1);
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-}
-.row-addField .housNum input {
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  width: 120%;
-  height: 16px;
-  padding-left: 5px;
-}
-.row-addField .streetSubdi input {
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  width: 120%;
-  height: 16px;
-  padding-left: 5px;
-}
-.row-addField .inputBrgy input {
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  width: 120%;
-  height: 16px;
-  padding-left: 5px;
-}
-.row-addField .inputCityOrMuni input {
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  width: 120%;
-  height: 16px;
-  padding-left: 5px;
+.row-addField .housNum, .row-addField .streetSubdi, .row-addField .inputBrgy {
+  padding-bottom: 12px;
 }
 
-.row-otherDetails .inputEmail span {
-  color: red;
-  font-size: 10px;
-  font-style: italic;
+.row-otherDetails label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fontcolor);
 }
-.row-otherDetails .contactNum span {
-  color: red;
-  font-size: 10px;
+.row-otherDetails .inputEmail input, .row-otherDetails .contactNum input, .row-otherDetails .birthDate input, .row-otherDetails .inputNationality input {
+  font-size: 16px;
+  height: 16px;
+  width: 45%;
+  padding: 4px;
+  padding-left: 6px;
+  border: none;
+  background-color: var(--addedcolor);
+  font-family: "Poppins", sans-serif;
+}
+
+.inputGender .IGEN {
+  height: 14px;
+  width: auto;
+  padding-right: 24px;
+}
+
+.rowPrivacy label {
+  font-size: 14px;
+}
+.rowPrivacy #agree {
+  width: 14px;
+  height: auto;
+  margin: 2px 0 0 0;
+  padding: 0;
+}
+.rowPrivacy .subtxt {
+  font-size: 12px;
   font-style: italic;
+  text-align: center;
 }
 
 .error {
